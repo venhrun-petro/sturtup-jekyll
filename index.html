@@ -1,0 +1,256 @@
+---
+layout: default
+---
+<main class="main">
+  <section class="startup">
+    <img class="startup_img lazy-img" data-src="images/Layer.png" alt="Layer">
+<div class="startup-opasiti">
+<div class="startup-cont">
+<h1 class="startup-title">Welcome to STARTUP<br>
+  <span class="agenzi"> Your Favourite Creative Agency Template</span></h1>
+  <button class="startup-btn">
+    <div class="btn-hov btn-top"></div>
+    <div class="btn-hov btn-bottom"></div>
+    <div class="btn-hov btn-top"></div>
+    <div class="btn-hov btn-bottom"></div>
+    <span class="btn-txt">Get Started</span>
+  </button>
+</div>
+
+</div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="general-container">
+    <h3 class="services_general-title">Services</h3><br>
+    <strong class="services_row">We offer ipsum dolor sit amet, consetetur sadipscing elitr amet</strong><br>
+    {% for serv in site.services %}
+    <div class="services_block">
+      <p class="icon"><span class="icon-center"><i class="{{serv.icon}}"></i></span></p><br>
+      <strong class="services_block_title">{{serv.title}}</strong><br>
+      <p class="services_block_row">{{serv.row}}</p>
+    </div>
+    {% endfor %}
+</div>
+  </section>
+
+  <section class="s-lazy slider" id="about" data-sizes="50vw">
+    <div class="general-container">
+    <h3 class="services_general-title">About us</h3><br>
+    <strong class="services_row">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</strong><br>
+
+
+
+      <div class="cont_about_text-information">
+    <p class="about_text-information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, porro possimus! Ab, ad amet, beatae dolor eligendi ex facere maxime minus nisi, officiis omnis quia quibusdam saepe sit tempore vero?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, porro possimus! Ab, ad amet, beatae dolor eligendi ex facere maxime minus nisi, officiis omnis quia quibusdam saepe sit tempore vero?</p>
+    <p class="about_text-information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, porro possimus! Ab, ad amet, beatae dolor eligendi ex facere maxime minus nisi, officiis omnis quia quibusdam saepe sit tempore vero?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, porro possimus! Ab, ad amet, beatae dolor eligendi ex facere maxime minus nisi, officiis omnis quia quibusdam saepe sit tempore vero?</p>
+      </div>
+
+
+    <div class="sl lazy">
+      {% for about in site.about-img %}
+      <div class="sl-slide">
+        <div class="img-cont">
+        <img class="slider_img" data-lazy="{{about.src}}" alt="{{about.name}}">
+          <div class="slider_content-icon">
+            {% for track in about.tracks %}
+            <a class="icon-sise" href="{{ track.title }}"><i class="{{track.clas}} icon"></i></a><!--{% for icon in site.about-icon %} {{icon.name}} {% endfor %}-->
+            {% endfor %}
+          </div>
+        </div>
+        <h2 class="slider_user-name">{{ about.user-name }}</h2>
+        <p class="slider_user-status">{{ about.status }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    </div>
+  </section>
+
+
+  <section class="my_tabs" id="Works">
+    <div class="general-container">
+
+      <h3 class="services_general-title">Latest Works</h3><br>
+
+
+
+    <div class="tabs" id="tabs">
+      <div class="tab-cont">
+        <h4 class="tab whiteborder">
+          All
+        </h4>
+        <h4 class="tab">
+          Branding
+        </h4>
+        <h4 class="tab">
+          Design
+        </h4>
+        <h4 class="tab">
+          Development
+        </h4>
+        <h4 class="tab">
+          Strategy
+        </h4>
+      </div>
+
+
+      {% for tabs in site.tabs %}
+      <div class="tabContent">
+
+        {% for block in tabs.block %}
+        <div class="tabContent_block-img">
+        <img class="tab-img lazy-img" src="{{block.img-src}}" alt="{{block.img-name}}">
+        <div class="tabContent-hover">
+
+          <div class="tabContent-hover_center">
+          <h3 class="tab-title">{{block.tab-title}}</h3>
+          <p class="tab-brand">{{block.tab-brand}}</p>
+            <button class="tab-btn">VIEW <i class="fas fa-chevron-right"></i></button>
+          </div>
+
+
+        </div>
+        </div>
+        {% endfor %}
+
+      </div>
+      {% endfor %}
+</div>
+
+    </div>
+  </section>
+
+  <section class="collection">
+    <img class="startup_img lazy-img" data-src="images/action.png" alt="Layer">
+    <div class="collection-opasiti">
+      <div class="general-container">
+      <h3 class="collection_title">Do you like OUR WORK so far?<br> Let's talk about YOUR PROJECT!</h3>
+      <button class="startup-btn">
+        <div class="btn-hov btn-top"></div>
+        <div class="btn-hov btn-bottom"></div>
+        <div class="btn-hov btn-top"></div>
+        <div class="btn-hov btn-bottom"></div>
+        <span class="btn-txt">Get in Touch</span>
+      </button>
+      </div>
+    </div>
+  </section>
+  <section class="blog" id="blog">
+    <div class="general-container">
+      <h3 class="services_general-title">Recent blog posts</h3>
+      <br>
+      <strong class="services_row">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</strong><br>
+
+
+
+
+      {% for idea in site.ideas %}
+      <div class="idea-container">
+        <div class="idea-container_cont-img">
+          <img class="idea-container_cont-img_img lazy-img" data-src="{{ idea.src-img }}" alt="idea.img-name">
+        </div>
+        <div class="idea-container_cont-txt">
+          <p class="data"><strong>{{ idea.data-number }}</strong><br>{{ idea.data-month }}</p>
+          <h3 class="idea_title"><span class="color-red">{{ idea.idea-title }} </span><br><span class="min-txt">{{ idea.idea-title_min-txt }} <span class="color-red">{{ idea.idea-title_min-txt_red }} </span>{{ idea.idea-title_min-txt_black }} <span class="color-red">{{ idea.idea-title_min-txt_black }}</span> </span></h3>
+
+          <p class="idea_txt">{{ idea.idea-txt }}</p>
+
+          <a class="more"><span class="color-red">{{ idea.idea-more }}</span></a>
+        </div>
+
+
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <section class="s-lazy slider" id="client" data-sizes="50vw">
+    <div class="general-container">
+      <div class="clients-logo-cont">
+        {% for clients-logo in site.clients-logo %}
+        <img class="clients-logo lazy-img" data-src="{{ clients-logo.logo-src }}" alt="{{ clients-logo.logo-name }}">
+
+        {% endfor %}
+      </div>
+
+      <div class="sl client">
+        {% for client in site.clients %}
+        <div class="sl-slide">
+          <p class="client_txt">{{ client.client-txt }}</p>
+          <p class="client_name">{{ client.client-name }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <div id="prob"></div>
+  <section class="contact" id="Contact">
+    <div class="general-container">
+      <h3 class="services_general-title">Get in touch</h3><br>
+      <strong class="services_row">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</strong><br>
+    <div class="flex-container">
+      <div class="info-cont">
+      <div class="info_block">
+        <i class="info-icon  fas fa-map-marker-alt"></i>
+        <h3 class="info_title">Address</h3>
+        <p class="info_txt">312, 7th Ave, New York NY <br>101200, United States of America  </p>
+      </div>
+      <div class="info_block">
+        <i class="info-icon fas fa-mobile-alt"></i>
+        <h3 class="info_title">Hotline (24x7)</h3>
+        <p class="info_txt">+65 0052 300, +65 88251 210 <br>+88 01723 511 340  </p>
+      </div>
+      <div class="info_block">
+        <i class="info-icon far fa-envelope"></i>
+        <h3 class="info_title">E-mail</h3>
+        <p class="info_txt">shapedtheme@gmail.com <br>khalilkode@gmail.com</p>
+      </div>
+      </div>
+      <div class="registration">
+        <form id="contactForm">
+
+              <div class="cont-imput" id="cont-imput">
+                <span>
+                <input class="myinput" name="from" type="text" placeholder="NAME">
+                  <p class="none"></p>
+                </span>
+              </div>
+          <div class="cont-imput">
+            <span>
+                <input class="myinput" name="email" type="email" placeholder="YOUR E-MAIL">
+               <p class="none"></p>
+            </span><br>
+          </div>
+          <div  class="cont-imput">
+            <span>
+              <input class="myinput" name="subject" placeholder="YOUR SUBJECT">
+             <p class="none"></p></span>
+          </div> <div  class="cont-imput">
+          <span>
+                <input class="myinput" name="company" type="text" placeholder="COMPANY NAME">
+             <p class="none"></p>
+          </span>
+          </div>
+          <div id="messag">
+            <textarea name="message" placeholder="WRITE YOUR MESSAGE"></textarea>
+             <p class="none"></p>
+          </div>
+          <h1 class="finisch" name="finisch" id="finisch">Thank you! Check your email for further details on data submitted.</h1>
+
+          <button class="startup-btn" type="button" onclick="validate(this.form)">
+            <div class="btn-hov btn-top"></div>
+            <div class="btn-hov btn-bottom"></div>
+            <div class="btn-hov btn-top"></div>
+            <div class="btn-hov btn-bottom"></div>
+            <span class="btn-txt">Send message</span>
+          </button>
+
+           </form>
+
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+
+</main>

@@ -1,1 +1,0 @@
-# sturtup-jekyll
